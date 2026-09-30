@@ -8,14 +8,15 @@ from dotenv import load_dotenv
 import os
 
 from dotenv import load_dotenv
+import streamlit as st
 import os
 
-load_dotenv(
-    dotenv_path=os.path.join(os.path.dirname(__file__), ".env"),
-    override=True
-)
+load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+
+if not GEMINI_API_KEY:
+    GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY")
 
 if not GEMINI_API_KEY:
     st.error("GEMINI_API_KEY not set.")
@@ -51,7 +52,7 @@ def add_bg(image_file):
         unsafe_allow_html=True
     )
     
-add_bg(r"D:\NorAQI\assets\Hazy River City at Sunset.png")
+add_bg("assets/Hazy River City at Sunset.png")
 
 st.title("🌍 NorAQI")
 
