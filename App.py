@@ -205,8 +205,8 @@ def fetch_weather(city):
 
 
 DEMO_AQI = {
-    "Kataka": 156,
-    "Bhubaneswar": 160
+    "Kataka": 160,
+    "Bhubaneswar": 166
 }
 
 weather = fetch_weather(city)
@@ -347,6 +347,15 @@ st.markdown(
 
     <h2>{icon} Air Quality Index</h2>
 
+    <p style="
+        color:#D9D9D9;
+        font-size:18px;
+        margin-top:-5px;
+        margin-bottom:15px;
+    ">
+    📍 {city}
+    </p>
+
     <h1 style="
         font-size:70px;
         margin:0;
@@ -405,7 +414,7 @@ st.markdown(
     <div style="text-align:center; opacity:0.75; font-size:14px;">
         🌍 <b>NorAQI</b><br>
         Hyperlocal Air Quality Reporting & AI Advisory<br><br>
-        SIH 2026 Prototype
+        Build with AI: Code for Communities - Second Edition
     </div>
     """,
     unsafe_allow_html=True,
